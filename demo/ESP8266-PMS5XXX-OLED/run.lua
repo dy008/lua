@@ -20,7 +20,7 @@ local pm25 = nil
 local Hum = nil
 local Temp = nil
 
-LeweiHttpClient.init("01","your_api_key_here")
+LeweiHttpClient.init("01","dab6a862154c4ebfab05b845eb4b5652")
 function setTimer()
      tmr.alarm(0, 60000, 0, function()
                if(pm25 ~=nil) then 
