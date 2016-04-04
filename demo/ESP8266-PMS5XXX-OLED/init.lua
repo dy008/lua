@@ -18,12 +18,12 @@ disp:drawStr(25,25,"PM2.5 Detector")
 disp:drawStr(20,50,"www.lewei50.com") 
 until disp:nextPage() == false 
 
-print("Connecteing To wifi...")		//使用模块：enduser_setup 来完成wifi连接
+print("Connecteing To wifi...")		--使用模块：enduser_setup 来完成wifi连接
 enduser_setup.start(
   function()
     print("Connected to wifi as:" .. wifi.sta.getip())
     print("Let's Go...")
-    --dofile("run.lua")
+    dofile("run.lua")
   end,
   function(err, str)
     print("enduser_setup: Err #" .. err .. ": " .. str)

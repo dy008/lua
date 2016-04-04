@@ -62,8 +62,8 @@ function M.sendSensorValue(sname,svalue)
           PostData = "["
           for i,v in pairs(sensorValueTable) do 
                PostData = PostData .. "{\"Name\":\""..i.."\",\"Value\":\"" .. v .. "\"},"
-               --print(i)
-               --print(v) 
+               print(i)
+               print(v) 
           end
           PostData = PostData .."{\"Name\":\""..sname.."\",\"Value\":\"" .. svalue .. "\"}"
           PostData = PostData .. "]"
@@ -72,13 +72,13 @@ function M.sendSensorValue(sname,svalue)
           PostData = nil
           end)
           --socket:on("sent", function(sck, response)
-               --print(tmr.now().."sent")
+               print(tmr.now().."sent")
           --sensorValueTable  = {}
           --end)
      
      --HTTP响应内容
      socket:on("receive", function(sck, response)
-          --print(response)
+          print(response)
           PostData = nil
           socket:close()
           print(node.heap())
